@@ -12,14 +12,14 @@ export const RemotionRoot: React.FC = () => {
 				// npx remotion render src/index.ts <id> out/video.mp4
 				id="HelloWorld"
 				component={HelloWorld}
-				durationInFrames={150}
+				durationInFrames={265}
 				fps={30}
-				width={1920}
-				height={1080}
+				width={540}
+				height={960}
 				// You can override these props for each render:
 				// https://www.remotion.dev/docs/parametrized-rendering
 				defaultProps={{
-					titleText: 'Welcome to Remotion',
+					titleText: 'Viajando a...',
 					titleColor: 'black',
 				}}
 			/>
@@ -27,7 +27,7 @@ export const RemotionRoot: React.FC = () => {
 			<Composition
 				id="OnlyLogo"
 				component={Logo}
-				durationInFrames={150}
+				durationInFrames={350}
 				fps={30}
 				width={1920}
 				height={1080}

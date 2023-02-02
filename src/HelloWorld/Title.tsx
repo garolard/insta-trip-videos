@@ -5,10 +5,10 @@ import {FONT_FAMILY} from './constants';
 const title: React.CSSProperties = {
 	fontFamily: FONT_FAMILY,
 	fontWeight: 'bold',
-	fontSize: 100,
+	fontSize: '7rem',
 	textAlign: 'center',
 	position: 'absolute',
-	bottom: 160,
+	bottom: 'calc(50% - 14rem)',
 	width: '100%',
 };
 
@@ -21,7 +21,8 @@ const word: React.CSSProperties = {
 export const Title: React.FC<{
 	titleText: string;
 	titleColor: string;
-}> = ({titleText, titleColor}) => {
+	animationDirection: boolean
+}> = ({titleText, titleColor, animationDirection}) => {
 	const videoConfig = useVideoConfig();
 	const frame = useCurrentFrame();
 
@@ -35,9 +36,9 @@ export const Title: React.FC<{
 				const scale = spring({
 					fps: videoConfig.fps,
 					frame: frame - delay,
-					config: {
-						damping: 200,
-					},
+					from: animationDirection ? 0 : 1,
+					to: animationDirection ? 1 : 0,
+					config: { damping: 10.5, stiffness: 160, mass: 0.6 }
 				});
 
 				return (

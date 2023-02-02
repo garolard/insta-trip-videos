@@ -22,6 +22,7 @@
     "@remotion/cli": "3.3.38",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-trip-animation": "file:../react-trip-animation",
     "remotion": "3.3.38"
   },
   "packageManager": "npm@8.19.3"
